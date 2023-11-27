@@ -31,4 +31,22 @@ public String createUser(@ModelAttribute("user") User user,Model model)
 }
 
 
+	@RequestMapping(path="/login",method = RequestMethod.POST)
+public String Login(@RequestParam("useremail") String useremail,@RequestParam String password,HttpSession session)
+{
+	User user=this.userservice.login(useremail,password);
+	
+	
+	if(user != null)
+	{
+		
+		return "Success";
+	}
+	else
+	{
+		return "failed";
+	}
+}
+
+
 }
