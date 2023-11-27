@@ -1,0 +1,55 @@
+@charset "ISO-8859-1";
+
+.form {
+	position: relative;
+}
+
+.form-label {
+	position: absolute;
+	top: 0.7rem;
+	left: 1.4rem;
+	cursor: text;
+	transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms
+		ease-in;
+}
+
+.form-control:focus ~.form-label, .form-control:not(:placeholder-shown).form-control:not(:focus)
+	~.form-label {
+	top: -0.8rem;
+	left: 0.6rem;
+	font-size: 15px;
+	background-color: whitesmoke;
+}
+
+body {
+	margin: 0;
+	height: 0;
+	background-size: cover;
+	background-position: center;
+	font-family: sans-serif;
+}
+
+.loginbox {
+	width: 400px;
+	height: 380px;
+	background-color: whitesmoke;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px 1px gray;
+	top: 20%;
+	left: 38%;
+	position: absolute;
+	transform: translate(-50, -50);
+	box-sizing: border-box;
+	
+}
+
+.submit input[type="submit"] {
+	width: 300px;
+	border-radius: 30px;
+}
+
+.h1 {
+	top: 8%;
+	left: 26%;
+	position: absolute;
+}
