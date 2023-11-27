@@ -29,6 +29,18 @@ private HibernateTemplate hibernateTemplate;
 		int id =(Integer) this.hibernateTemplate.save(user);
 		return id;
 	}
+
+
+	public User login(String useremail, String password) {
+		String hql = "FROM User WHERE useremail = :useremail AND password = :password";
+
+		return hibernateTemplate.execute(session -> {
+			Query<User> query = session.createQuery(hql, User.class);
+			query.setParameter("useremail", useremail);
+			query.setParameter("password", password);
+			return query.uniqueResult();
+		});
+	}
 	
 	
 }
