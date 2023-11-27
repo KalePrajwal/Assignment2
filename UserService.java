@@ -19,4 +19,10 @@ public int createUser(User user)
 {
  return this.userdao.saveUser(user);
 }
+
+
+	public User login(String useremail,String password)
+	{
+		return this.userdao.login(useremail, password);
+	}
 }
